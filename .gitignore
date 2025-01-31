@@ -40,3 +40,5 @@ Thumbs.db
 
 .nx/cache
 .nx/workspace-data
+
+src/assets/pokedex-firebase-key.json
