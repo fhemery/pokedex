@@ -1,36 +1,29 @@
 {
   "name": "pokedex",
-  "$schema": "node_modules/nx/schemas/project-schema.json",
-  "includedScripts": [],
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "src",
   "projectType": "application",
   "tags": [],
   "targets": {
     "build": {
-      "executor": "nx:run-commands",
+      "executor": "@nx/webpack:webpack",
       "options": {
-        "command": "webpack-cli build",
-        "args": [
-          "node-env=production"
-        ]
-      },
-      "configurations": {
-        "development": {
-          "args": [
-            "node-env=development"
-          ]
-        }
+        "webpackConfig": "webpack.config.js",
+        "main": "src/main.ts",
+        "tsConfig": "tsconfig.app.json",
+        "optimization": false,
+        "outputHashing": "none",
+        "sourceMap": true,
+        "outputPath": "dist/",
+        "compiler": "tsc",
+        "target": "node"
       }
     },
     "serve": {
       "executor": "@nx/js:node",
       "defaultConfiguration": "development",
-      "dependsOn": [
-        "build"
-      ],
       "options": {
-        "buildTarget": "pokedex:build",
-        "runBuildTargetDependencies": false
+        "buildTarget": "pokedex:build"
       },
       "configurations": {
         "development": {
@@ -39,12 +32,13 @@
         "production": {
           "buildTarget": "pokedex:build:production"
         }
-      }
-    },
-    "test": {
-      "options": {
-        "passWithNoTests": true
-      }
+      },
+      "dependsOn": [
+        {
+          "projects": [],
+          "target": "build"
+        }
+      ]
     }
   }
 }
