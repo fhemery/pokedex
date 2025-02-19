@@ -1,17 +1,18 @@
-import axios from 'axios';
+import request from 'supertest';
+import { defaultUrl } from '../constants';
 
 describe('GET /api/ping', () => {
   it('should return pong on get', async () => {
-    const response = await axios.get('/api/ping');
+    const response = await request(defaultUrl).get('/api/ping');
 
     expect(response.status).toBe(200);
-    expect(response.data.response).toBe('pong');
+    expect(response.body.response).toBe('pong');
   });
 
   it('should return the correct version', async () => {
-    const response = await axios.get('/api/ping');
+    const response = await request(defaultUrl).get('/api/ping');
 
     expect(response.status).toBe(200);
-    expect(response.data.version).toEqual('1');
+    expect(response.body.version).toEqual('1');
   });
 });
