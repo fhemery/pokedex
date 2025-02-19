@@ -21,10 +21,7 @@ describe('POST /api/users', () => {
   });
 
   it('should return 401 if user is not authenticated', async () => {
-    try {
-      await request(defaultUrl).post('/api/users').send({});
-    } catch (e) {
-      expect(e.status).toBe(401);
-    }
+    const response = await request(defaultUrl).post('/api/users').send({});
+    expect(response.status).toBe(401);
   });
 });
