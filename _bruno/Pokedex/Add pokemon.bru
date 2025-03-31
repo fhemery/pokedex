@@ -1,0 +1,21 @@
+meta {
+  name: Add pokemon
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:3000/api/pokemons
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJSUzI1NiIsImtpZCI6ImE5ZGRjYTc2YzEyMzMyNmI5ZTJlODJkOGFjNDg0MWU1MzMyMmI3NmEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL3NlY3VyZXRva2VuLmdvb2dsZS5jb20vcG9rZWRleC00ZDUwOSIsImF1ZCI6InBva2VkZXgtNGQ1MDkiLCJhdXRoX3RpbWUiOjE3NDM0MTEzMTAsInVzZXJfaWQiOiIxODlNNGJxQWdGT2g3dENNSEpyTFhwOXhzOWcyIiwic3ViIjoiMTg5TTRicUFnRk9oN3RDTUhKckxYcDl4czlnMiIsImlhdCI6MTc0MzQxMTMxMCwiZXhwIjoxNzQzNDE0OTEwLCJlbWFpbCI6ImZoZW1lcnlAaGVtaXQuZnIiLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiZmhlbWVyeUBoZW1pdC5mciJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.KOstW90caDnoxvz_xFnCl4wbxfKDmHwLCuqTp8KVQQaXMp7PHVrR2GwlsbkCB3UGAcGiOqtaG2LFubf2Syp45zWgowIGN5QGKMiizbb-v5tUkp-pHZV4InKepMOHC5OlYguAanfQaToB6Az0jX4gPobomWAeerdxU98TnkT29CqTSR8DNMo9Kf2HwZm8Kx_ZTtGZ6DR1g01vbpte6b4okyndwAhrjQCl92ikPScVJjFyA3sMa7OVwvfv69-CExEopKWLd3KnKZgYNya9QY8fQ1Hh6tTCFVR2Xu6f2QAXmONH68lwgIA0BHXWfOZMZJZmktK_oFv14jLDMubqYcnEYQ
+}
+
+body:json {
+  {
+    "id": "whatever",
+  }
+}

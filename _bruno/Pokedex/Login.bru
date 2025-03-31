@@ -5,7 +5,19 @@ meta {
 }
 
 post {
-  url: 
-  body: none
+  url: https://www.googleapis.com/identitytoolkit/v3/relyingparty/verifyPassword?key=AIzaSyDIBKcmYN8CkFIQ4zWZpBmI1N3piflfqqM
+  body: json
   auth: none
+}
+
+query {
+  key: AIzaSyDIBKcmYN8CkFIQ4zWZpBmI1N3piflfqqM
+}
+
+body:json {
+  {
+    "email": "fhemery@hemit.fr",
+    "password": "Test123!",
+    "returnSecureToken": true
+  }
 }
